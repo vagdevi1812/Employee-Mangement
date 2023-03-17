@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <springProfile name="local">
+	    <root level="INFO">
+	    	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender"> 
+		       	        
+		        <!-- Use the below encoder to switch of json logging -->
+		        <encoder>
+		      		<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - requestId=%X{requestId} syntheticId=%X{syntheticId} %msg%n</pattern>
+		    	</encoder>
+		    </appender>
+	    </root>
+    </springProfile>
+</configuration>
